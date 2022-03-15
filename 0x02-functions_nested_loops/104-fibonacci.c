@@ -7,19 +7,18 @@
  */
 int main(void)
 {
-	int i = 0;
-	unsigned long int a = 0, b = 1, next = 0;
+	long int i, t1 = 1, t2 = 2, sum = 0;
 
-	while (i < 99)
+	for (i = 1; i < 98; i++)
 	{
-		next = a + b;
-		a = b;
-		b = next;
-		printf("%lu", next);
-
-		if (i < 97)
-			printf(", ");
-		i++;
+		printf("%ld, ", t1);
+		sum = t1 + t2;
+		t1 = t2;
+		t2 = sum;
+		if (i == 97)
+		{
+			printf("%ld\n", t1);
+		}
 	}
 	putchar('\n');
 	return (0);
