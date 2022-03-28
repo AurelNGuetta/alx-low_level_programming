@@ -12,14 +12,19 @@ FYI: The standard library provides a similar function: strchr. Run man strchr to
  *
  * Return: a pointer to a character aka the character found
  */
+
 char *_strchr(char *s, char c)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0' ; i++)
+	for (i = 0; s[i] >= '\0'  ; i++)
 	{
 		if (s[i] == c)
-		return (&s[i]);
+		{
+			return (s + i);
+		}
 	}
-	return (0);
+
+	return ('\0');
 }
+
